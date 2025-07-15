@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 201 100% 36%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 201 100% 36%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 201 100% 36%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 201 100% 36%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  /* LinkedIn-inspired components */
+  .linkedin-card {
+    @apply bg-white rounded-lg shadow-card border border-gray-200 overflow-hidden;
+  }
+  
+  .linkedin-card-hover {
+    @apply hover:shadow-card-hover transition-shadow duration-200;
+  }
+  
+  .linkedin-button {
+    @apply bg-linkedin-500 text-white px-4 py-2 rounded-md font-medium hover:bg-linkedin-600 transition-colors duration-200;
+  }
+  
+  .linkedin-button-secondary {
+    @apply bg-transparent text-linkedin-500 border border-linkedin-500 px-4 py-2 rounded-md font-medium hover:bg-linkedin-50 transition-colors duration-200;
+  }
+  
+  .linkedin-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-linkedin-500 focus:border-transparent;
+  }
+  
+  .linkedin-avatar {
+    @apply w-12 h-12 rounded-full border-2 border-white shadow-sm;
+  }
+  
+  .linkedin-avatar-sm {
+    @apply w-8 h-8 rounded-full border border-white shadow-sm;
+  }
+  
+  .linkedin-post {
+    @apply linkedin-card linkedin-card-hover p-4 mb-4;
+  }
+  
+  .linkedin-metric {
+    @apply text-sm text-gray-500 hover:text-linkedin-500 cursor-pointer transition-colors duration-200;
+  }
+  
+  .linkedin-engagement {
+    @apply flex items-center space-x-1 text-sm text-gray-500 hover:text-linkedin-500 cursor-pointer transition-colors duration-200;
+  }
+  
+  .linkedin-comment {
+    @apply bg-gray-50 rounded-lg p-3 mt-3;
+  }
+  
+  .linkedin-sidebar {
+    @apply bg-white rounded-lg shadow-card border border-gray-200 p-4 sticky top-4;
+  }
+  
+  .linkedin-header {
+    @apply bg-white border-b border-gray-200 px-4 py-3 sticky top-0 z-50;
+  }
+  
+  .linkedin-nav {
+    @apply text-gray-700 hover:text-linkedin-500 transition-colors duration-200;
+  }
+  
+  .linkedin-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .linkedin-badge-success {
+    @apply linkedin-badge bg-success-100 text-success-800;
+  }
+  
+  .linkedin-badge-warning {
+    @apply linkedin-badge bg-warning-100 text-warning-800;
+  }
+  
+  .linkedin-badge-error {
+    @apply linkedin-badge bg-error-100 text-error-800;
+  }
+  
+  .linkedin-badge-info {
+    @apply linkedin-badge bg-linkedin-100 text-linkedin-800;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Smooth animations */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+.focus-visible {
+  @apply outline-none ring-2 ring-linkedin-500 ring-offset-2;
+}
+
+/* Loading spinner */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulse animation for loading states */
+.pulse-loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Fade in animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide up animation */
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale animation */
+.scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+} 
